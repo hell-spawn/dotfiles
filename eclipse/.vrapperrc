@@ -1,0 +1,11 @@
+set autoindent
+set ignorecase
+set smartcase
+set contentassistmode
+set clipboard=unnamed
+
+
+"https://www.ibm.com/docs/en/z-open-development/2.0.x?topic=SSUFAU_2.0.0/org.eclipse.jdt.doc.isv/reference/api/org/eclipse/jdt/ui/actions/IJavaEditorActionDefinitionIds.html
+
+noremap gi <Plug>(eclipse-textobj:org.eclipse.jdt.ui.edit.text.java.open.editor)
+

@@ -1,0 +1,34 @@
+{
+    "diagnostic.checkCurrentLine": true,
+    "snippets.extends": {
+        "cpp": [
+            "c"
+        ],
+        "javascriptreact": [
+            "javascript"
+        ],
+        "typescript": [
+            "javascript",
+            "ng2"
+        ],
+        "html": [
+            "html",
+            "ng2html"
+        ],
+        "jsp": [
+            "html",
+            "colfondos"
+        ]
+    },
+    "suggest.echodocSupport": true,
+    "suggest.maxCompleteItemCount": 20,
+    "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+    "tsserver.formatOnType": true,
+    "coc.preferences.formatOnType": true,
+    "diagnostic.errorSign": ">",
+    "diagnostic.warningSign": ">",
+    "diagnostic.infoSign": ">",
+    "explorer.git.enable": false,
+    "http.proxy": "http://172.18.167.33:8080",
+    "http.proxyStrictSSL": false
+}

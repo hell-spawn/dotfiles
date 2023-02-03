@@ -1,0 +1,22 @@
+[core]
+	autocrlf = false
+	editor = 'D:\\Apps\\Vim\\vim82\\vim.exe' '%*'
+[diff]
+	tool =  D:\\Apps\\Vim\\vim82\\vim.exe -d 
+[user]
+[difftool]
+    prompt = true
+[diff]
+    tool = vimdiff
+[difftool "vimdiff"]
+    cmd = 'D:\\Apps\\Vim\\vim82\\vim.exe' -f -d \"$REMOTE\" \"$LOCAL\" 
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+   	keepBackup = false
+    keepTemporaries = false
+[mergetool "vimdiff"]
+    cmd = 'D:\\Apps\\Vim\\vim82\\vim.exe' -f -d -c '4wincmd w | wincmd J'   \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"   
+    prompt = false
+[http]
+	sslVerify = false
