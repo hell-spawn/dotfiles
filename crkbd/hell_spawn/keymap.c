@@ -1,8 +1,4 @@
 /*
-Copyright 2019 @foostan
-Copyright 2020 Drashna Jaelre <@drashna>
-Copyright 2022 Alejandro Jarovisky <@ajarov>
-
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
@@ -39,9 +35,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       LCTL_T(KC_ESC),    ES_A,    ES_S,    ES_D,    ES_F,    ES_G,                         ES_H,    ES_J,    ES_K,    ES_L, ES_NTIL, ES_ACUT,
          //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     LSFT_T(ES_QUOT),    ES_Z,    ES_X,    ES_C,    ES_V,    ES_B,                         ES_N,    ES_M, ES_COMM,  ES_DOT, ES_MINS, RSFT_T(KC_CAPS),
+             KC_LSFT,    ES_Z,    ES_X,    ES_C,    ES_V,    ES_B,                         ES_N,    ES_M, ES_COMM,  ES_DOT, ES_MINS, RSFT_T(ES_EQL),
             //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                      KC_LGUI, MO(_NAVIGATE), KC_SPC ,            KC_ENT , MO(_SYMBOLS), LALT_T(KC_DEL)
+                                     KC_LGUI, MO(_NAVIGATE), KC_SPC ,            KC_ENT , MO(_SYMBOLS), LALT_T(KC_DEL)
                                                 //`--------------------------'  `--------------------------'
     ),
 
@@ -51,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_LCTL,   KC_F5,   KC_F6,   KC_F7,   KC_F8, KC_PSCR,                       KC_DEL, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, ES_DIAE,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_LSFT,   KC_F9,  KC_F10,  KC_F11,  KC_F12, KC_PAUS,                      XXXXXXX, XXXXXXX, ES_SCLN, ES_COLN, ES_UNDS, KC_RSFT,
+        KC_LSFT,   KC_F9,  KC_F10,  KC_F11,  KC_F12, KC_PAUS,                      KC_CAPS, XXXXXXX, ES_SCLN, ES_COLN, ES_UNDS, KC_RSFT,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                             KC_LGUI, _______,  KC_SPC,     KC_ENT, MO(_ADJUST), KC_RALT
                                         //`--------------------------'  `--------------------------'
@@ -59,11 +55,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYMBOLS] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        XXXXXXX, ES_EXLM, ES_IEXL , ES_LPRN, ES_RPRN, XXXXXXX,                      XXXXXXX,  ES_EQL, ES_ASTR,  ES_GRV, ES_CIRC, KC_BSPC,
+         KC_TAB, ES_EXLM, ES_IEXL , ES_LPRN, ES_RPRN,XXXXXXX,                     ES_DQUO, ES_SLSH, ES_ASTR, KC_SCLN, ES_CIRC, KC_BSPC,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        XXXXXXX, ES_IQUE, ES_QUES, ES_LCBR, ES_RCBR, XXXXXXX,                      ES_DQUO, ES_SLSH, ES_PLUS,   ES_AT, ES_HASH, ES_MORD,
+        KC_LCTL, ES_IQUE, ES_QUES, ES_LCBR, ES_RCBR, XXXXXXX,                      ES_QUOT, ES_BSLS, ES_PLUS,   ES_AT, ES_HASH, XXXXXXX,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        XXXXXXX, ES_LABK, ES_RABK, ES_LBRC, ES_RBRC, XXXXXXX,                      XXXXXXX,  ES_DLR, ES_AMPR, ES_PIPE, ES_PERC, ES_BSLS,
+        KC_LSFT, ES_LABK, ES_RABK, ES_LBRC, ES_RBRC, XXXXXXX,                      ES_GRV,  ES_PIPE, ES_AMPR,  ES_DLR, ES_PERC, KC_RSFT,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                       KC_LGUI,   MO(_ADJUST),  KC_SPC,     KC_ENT, _______, KC_RALT
                                         //`--------------------------'  `--------------------------'
@@ -71,11 +67,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NUMPAD] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-         KC_TAB, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      ES_MINS,    ES_7,    ES_8,    ES_9, ES_SLSH, KC_BSPC,
+        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      ES_MINS,    ES_7,    ES_8,    ES_9, ES_SLSH, KC_BSPC,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-         KC_ESC, XXXXXXX, KC_LSFT, KC_LALT, KC_LGUI, XXXXXXX,                      ES_PLUS,    ES_4,    ES_5,    ES_6, ES_ASTR, ES_COMM,
+        KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      ES_PLUS,    ES_4,    ES_5,    ES_6, ES_ASTR, ES_COMM,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       ES_DOT,    ES_1,    ES_2,    ES_3,    ES_0, XXXXXXX,
+        KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       ES_DOT,    ES_1,    ES_2,    ES_3,    ES_0,  ES_EQL,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                             KC_LGUI, _______,  KC_SPC,     KC_ENT, _______, KC_RALT
                                         //`--------------------------'  `--------------------------'
@@ -83,9 +79,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ADJUST] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX, XXXXXXX,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, XXXXXXX,                      KC_VOLD, XXXXXXX, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -239,7 +235,8 @@ void render_logo(void) {
         0xa0, 0xa1, 0xa2, 0xa3, 0xa4,
         0xc0, 0xc1, 0xc2, 0xc3, 0xc4, 0};
     oled_write_P(corne_logo, false);
-    oled_write_P(PSTR("corne"), false);
+    led_t led_state = host_keyboard_led_state();
+    oled_write_P(led_state.caps_lock ? PSTR("CORNE") : PSTR("corne"), false);
 }
 
 void render_layer_state(void) {
@@ -256,9 +253,9 @@ void render_layer_state(void) {
         0x20, 0xba, 0xbb, 0xbc, 0x20,
         0x20, 0xda, 0xdb, 0xdc, 0x20, 0};
     static const char PROGMEM numpad_layer[] = {
-        0x20, 0x91, 0x92, 0x93, 0x20,
-        0x20, 0xb1, 0xb2, 0xb3, 0x20,
-        0x20, 0xd1, 0xd2, 0xd3, 0x20, 0};
+        0x20, 0xd1, 0xd2, 0xd3, 0x20,
+        0x20, 0xb7, 0xb8, 0xb9, 0x20,
+        0x20, 0xd7, 0xd8, 0xd9, 0x20, 0};
     static const char PROGMEM adjust_layer[] = {
         0x20, 0x9d, 0x9e, 0x9f, 0x20,
         0x20, 0xbd, 0xbe, 0xbf, 0x20,
