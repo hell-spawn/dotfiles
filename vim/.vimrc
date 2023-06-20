@@ -14,9 +14,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"TODO-WIN File format 
-"set ff=dos
-
 "Paths
 set rtp+=~/.fzf
 
@@ -34,11 +31,6 @@ set path+=**
 
 set hidden
 
-"TODO-WIN set default clipboard 
-"set clipboard=unnamed
-
-
-"TODO-LINUX
 set clipboard=unnamedplus
 
 
@@ -91,6 +83,7 @@ syntax on
 if has("termguicolors")
     set termguicolors
 endif
+
 "set bg=light
 set t_Co=256
 set background=dark
@@ -98,11 +91,7 @@ set background=dark
 " Use theme
 colorscheme gruvbox 
 
-"TODO-LINUX
 set guifont=DejaVuSansMono\ Nerd\ Font\ Bold\ 12
-"WIN DejaVuSansMono NF no funciona 
-"set guifont=DejaVuSansMono\ NF:h11:b
-
 set listchars=tab:>-,trail:•,precedes:<,extends:>,eol:$,space:.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -162,13 +151,11 @@ let mapleader=" "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"TODO-LINUX
-"call plug#begin('~/.vim/plugged')
-"TODO-WINDOWS
-call plug#begin('~/vimfiles/plugged')
+call plug#begin('~/.vim/plugged')
 
 "coc.vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'editorconfig/editorconfig-vim'
 
 "fzf
@@ -209,17 +196,9 @@ call plug#end()
 "
 " AUTO PAIRS
 "
-<<<<<<< HEAD
 let g:AutoPairsMapCR = 0
 let g:AutoPairsCenterLine = 0
 
-=======
-
-let g:AutoPairsMapCR = 0
-let g:AutoPairsCenterLine = 0
-
-
->>>>>>> 3c941ed9ee4c361d681d10f69d7feee77fa6c2cd
 "
 "-VIM AIRLINE
 "
@@ -230,21 +209,6 @@ endif
 
 let g:airline_theme = 'gruvbox'
 let g:airline#extensions#tabline#buffer_nr_show = 1
-"TODO-WINDOWS
-"let g:airline_powerline_fonts = 0
-" unicode symbols
-"let g:airline_left_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_symbols.crypt = '®'
-"let g:airline_symbols.linenr = '¦'
-"let g:airline_symbols.maxlinenr = '±'
-"let g:airline_symbols.branch = '↑'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.spell = '©'
-"let g:airline_symbols.notexists = 'Ɇ'
-"let g:airline_symbols.whitespace = 'Ξ'
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 "TODO-LINUX
 " airline symbols
