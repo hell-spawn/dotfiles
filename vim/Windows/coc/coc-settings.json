@@ -29,6 +29,4 @@
     "diagnostic.warningSign": ">",
     "diagnostic.infoSign": ">",
     "explorer.git.enable": false,
-    "http.proxy": "http://172.18.167.33:8080",
-    "http.proxyStrictSSL": false
 }
