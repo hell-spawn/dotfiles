@@ -33,6 +33,7 @@ set hidden
 
 set clipboard=unnamedplus
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " VIM user interface
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -42,8 +43,6 @@ set number
 " Number relative
 set relativenumber
 set numberwidth=4
-
-set scrolloff=4   "This keep 4 lines visible above cursor
 
 " Show matching brackets when text indicator is over them
 set showmatch
@@ -92,7 +91,7 @@ set background=dark
 " Use theme
 colorscheme gruvbox 
 
-set guifont=FiraCode\ Nerd\ Font\ Mono
+set guifont=DejaVuSansMono\ Nerd\ Font\ Bold\ 12
 set listchars=tab:>-,trail:•,precedes:<,extends:>,eol:$,space:.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -182,11 +181,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
+"Plug 'ap/vim-css-color'
 Plug 'lilydjwg/colorizer'
-Plug 'qpkorr/vim-bufkill'
-
-" Syntax 
-Plug 'sheerun/vim-polyglot'
 
 "Snippets
 Plug 'hell-spawn/vim-spawn-snippets'
@@ -196,13 +192,6 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Config Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""
-
-"
-" POLYGLOT
-"
-" let g:python_highlight_all = 1
-
-map <C-d> :BD<cr>
 
 "
 " AUTO PAIRS
@@ -221,6 +210,7 @@ endif
 let g:airline_theme = 'gruvbox'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
+"TODO-LINUX
 " airline symbols
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
@@ -228,11 +218,8 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
-let g:airline_symbols.colnr = ' ℅:'
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ' :'
-let g:airline_symbols.maxlinenr = '☰ '
-let g:airline_symbols.dirty='⚡'
+let g:airline_symbols.linenr = ''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
@@ -259,10 +246,10 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 if has("patch-8.1.1564")
-    " Recently vim can merge signcolumn and number column into one
-    set signcolumn=number
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
 else
-    set signcolumn=yes
+  set signcolumn=yes
 endif
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -270,36 +257,27 @@ endif
 " no select by `"suggest.noselect": true` in your configuration file.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-"
-"inoremap <silent><expr> <TAB>
-"      \ coc#pum#visible() ? coc#pum#next(1) :
-"      \ CheckBackspace() ? "\<Tab>" :
-"      \ coc#refresh()
-"inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
-"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-"                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-inoremap <silent><expr> <TAB>
-            \ coc#pum#visible() ? coc#_select_confirm() :
-            \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-            \ CheckBackspace() ? "\<TAB>" :
-            \ coc#refresh()
-
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! CheckBackspace() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
 if has('nvim')
-    inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <silent><expr> <c-space> coc#refresh()
 else
-    inoremap <silent><expr> <c-@> coc#refresh()
+  inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -317,11 +295,9 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
-    if CocAction('hasProvider', 'hover')
-        call CocActionAsync('doHover')
-    else
-        call feedkeys('K', 'in')
-    endif
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  endif
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -335,11 +311,11 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
-    autocmd!
-    " Setup formatexpr specified filetype(s).
-    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-    " Update signature help on jump placeholder.
-    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Applying codeAction to the selected region.
@@ -368,12 +344,12 @@ nmap <leader>cl  <Plug>(coc-codelens-action)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
-    nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-    nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-    inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-    inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-    vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-    vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
 " Use CTRL-S for selections ranges.
@@ -488,6 +464,9 @@ if &diff
     set diffopt+=iwhite
 endif
 
+" Close Buffer
+nnoremap \d :bp<cr>:bd #<cr>
+
 " Add SemiColon end of line
 inoremap <C-_> <Esc>:call <SID>InsSemiColon()<CR>
 function! <SID>InsSemiColon() abort
@@ -510,13 +489,13 @@ endfunction
 
 " XML formatter
 function! DoFormatXML()
-    exe ':'.'%s/<\([^>]\)*>/\r&\r/g'
-    exe ':'.'%g/^\s*$/delete'
+		exe ':'.'%s/<\([^>]\)*>/\r&\r/g'
+		exe ':'.'%g/^\s*$/delete'
 endfunction
 
 
 command -nargs=1 Vsb call VsbFunction(<f-args>)
 
 function VsbFunction (arg1)
-    execute 'vert sb' a:arg1
+  execute 'vert sb' a:arg1
 endfunction
