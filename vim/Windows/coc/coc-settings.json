@@ -34,13 +34,21 @@
     "typeParameter": "\uea92",
     "default": "\uf29c"
   },
-  "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": true,
-  "diagnostic.checkCurrentLine": true,
+  "suggest.floatConfig": {
+        "border": true,
+        "rounded": true
+    },
+  "diagnostic.virtualText": false,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.checkCurrentLine": false,
   "diagnostic.errorSign": "\uf057",
   "diagnostic.warningSign": "\uf06A",
   "diagnostic.infoSign": "\uf059",
   "diagnostic.hintSign": "\uf29c",
+  "diagnostic.floatConfig": {
+        "border": true,
+        "rounded": true
+  },
   "snippets.ultisnips.enable": true,
   "snippets.priority": 90,
   "snippets.extends": {
