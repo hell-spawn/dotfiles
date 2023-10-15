@@ -34,6 +34,10 @@
     "typeParameter": "\uea92",
     "default": "\uf29c"
   },
+  "suggest.floatConfig": {
+        "border": true,
+        "rounded": true
+    },
   "diagnostic.virtualText": false,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.errorSign": "\uf057",
@@ -41,6 +45,10 @@
   "diagnostic.infoSign": "\uf059",
   "diagnostic.hintSign": "\uf29c",
   "list.indicator": ">",
+  "diagnostic.floatConfig": {
+        "border": true,
+        "rounded": true
+  },
   "snippets.ultisnips.enable": true,
   "snippets.priority": 90,
   "snippets.extends": {
