@@ -4,6 +4,16 @@
     "actions": 
     [
         {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            }
+        },
+        {
+            "command": "paste"
+        },
+        {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
@@ -23,25 +33,11 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
-        },
-        {
-            "command": "paste"
-        },
-        {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            }
         }
     ],
-    "alwaysShowTabs": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-    "disableAnimations": true,
-    "experimental.rendering.forceFullRepaint": true,
-    "experimental.rendering.software": false,
+    "defaultProfile": "{015099cd-b82d-4d33-b6d9-41820972938b}",
     "launchMode": "maximized",
     "newTabMenu": 
     [
@@ -53,39 +49,24 @@
     {
         "defaults": 
         {
-            "experimental.retroTerminalEffect": false,
             "font": 
             {
-                "face": "FiraCode Nerd Font"
-            },
-            "suppressApplicationTitle": true,
-            "useAcrylic": false,
-            "useAtlasEngine": true
+                "face": "FiraCode Nerd Font Mono"
+            }
         },
         "list": 
         [
             {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
-                "antialiasingMode": "cleartype",
-                "backgroundImage": null,
-                "colorScheme": "Campbell",
-                "experimental.retroTerminalEffect": false,
-                "font": 
-                {
-                    "face": "FiraCode Nerd Font"
-                },
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
-                "name": "S\u00edmbolo del sistema",
-                "opacity": 100,
-                "startingDirectory": "%USERPROFILE%",
-                "suppressApplicationTitle": false,
-                "useAcrylic": false,
-                "useAtlasEngine": true
+                "name": "S\u00edmbolo del sistema"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -94,12 +75,25 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "commandline": "cmd.exe",
-                "guid": "{7a0353ea-d413-4b92-a85e-4da27975ee27}",
+                "altGrAliasing": true,
+                "antialiasingMode": "grayscale",
+                "closeOnExit": "automatic",
+                "colorScheme": "Campbell",
+                "commandline": "D:\\Apps\\PowerShell\\pwsh.exe",
+                "cursorShape": "bar",
+                "font": 
+                {
+                    "size": 12.0
+                },
+                "guid": "{015099cd-b82d-4d33-b6d9-41820972938b}",
                 "hidden": false,
-                "icon": "C:\\Program Files\\Git\\usr\\share\\git\\msys2-32.ico",
-                "name": "MINGW64 / MSYS2",
-                "startingDirectory": "%USERPROFILE%"
+                "historySize": 9001,
+                "icon": "D:\\Apps\\PowerShell\\assets\\Square44x44Logo.png",
+                "name": "PowerShell",
+                "padding": "8, 8, 8, 8",
+                "snapOnInput": true,
+                "startingDirectory": "%USERPROFILE%",
+                "useAcrylic": false
             }
         ]
     },
@@ -313,10 +307,6 @@
             "yellow": "#808000"
         }
     ],
-    "showTabsInTitlebar": true,
-    "showTerminalTitleInTitlebar": true,
-    "tabWidthMode": "compact",
-    "theme": "dark",
     "themes": 
     [
         {
