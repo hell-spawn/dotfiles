@@ -82,6 +82,6 @@
     "vue",
     "markdown"
   ],
-  "python.venvPath": "~\\venv",
+  "python.venvPath": "${workspaceFolder}\\.venv",
   "groovy.java.home": "D:\\Libs\\JDKs\\jdk64"
 }
