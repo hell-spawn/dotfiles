@@ -39,8 +39,7 @@
         "rounded": true
     },
   "diagnostic.virtualText": false,
-  "diagnostic.virtualTextCurrentLineOnly": false,
-  "diagnostic.checkCurrentLine": false,
+  "diagnostic.checkCurrentLine": true,
   "diagnostic.errorSign": "\uf057",
   "diagnostic.warningSign": "\uf06A",
   "diagnostic.infoSign": "\uf059",
@@ -91,5 +90,12 @@
     "markdown"
   ],
   "python.venvPath": "${workspaceFolder}\\.venv",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    "--disable=missing-module-docstring",
+    "--disable=missing-class-docstring",
+    "--disable=missing-function-docstring"
+  ],
   "groovy.java.home": "D:\\Libs\\JDKs\\jdk64"
 }
