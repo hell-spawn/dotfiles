@@ -1,0 +1,7 @@
+#Fri Apr 26 09:58:53 COT 2024
+\!/=
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands>\r\n<activeKeyConfiguration keyConfigurationId\="kg.totality.core.insert_mode"/>\r\n<keyBinding contextId\="org.eclipse.ui.contexts.dialogAndWindow" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+C"/>\r\n<keyBinding contextId\="org.eclipse.ui.contexts.dialogAndWindow" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+V"/>\r\n</org.eclipse.ui.commands>
+/instance/org.eclipse.ui/KEY_CONFIGURATION_ID=kg.totality.core.insert_mode
+@org.eclipse.ui=3.113.0.v20190513-2118
+@org.eclipse.ui.workbench=3.115.0.v20190521-1602
+file_export_version=3.0
