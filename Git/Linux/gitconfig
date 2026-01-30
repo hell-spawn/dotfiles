@@ -1,0 +1,7 @@
+[user]
+	name = Hell Spawn
+	email = mauricio.hell.spawn@gmail.com
+[core]
+	editor = nvim
+[pull]
+	rebase = false
